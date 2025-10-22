@@ -1,20 +1,78 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Examen</title>
-    <link rel="stylesheet" href="{% static 'examapp/style.css' %}">
+    <style>
+        body {
+            background-color: white;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #282c34;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: white;    
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            margin-top: 15px;
+            background-color: crimson;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: black;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #21a1f1;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            background: #1b1f24;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Evaluador Examen</h1>
         <form method="post">
-            {% csrf_token %}
-            <label for="x">Valor de x: </label>
+            <label for="expr">Valor de x: </label>
             <input type="number" name="x" required>
 
-            <label for="y">Valor de y: </label>
+            <label for="expr">Valor de y: </label>
             <input type="number" name="y" required>
             <button type="submit">Evaluar</button>
         </form>
