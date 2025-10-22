@@ -69,6 +69,7 @@
     <div class="container">
         <h1>Evaluador Examen</h1>
         <form method="post">
+            {% csrf_token %}
             <label for="expr">Valor de x: </label>
             <input type="number" name="x" required>
 
