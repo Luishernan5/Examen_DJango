@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    <link rel="stylesheet" href="{% static 'examapp/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Evaluador Examen</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="x">Valor de x: </label>
+            <input type="number" name="x" required>
+
+            <label for="y">Valor de y: </label>
+            <input type="number" name="y" required>
+            <button type="submit">Evaluar</button>
+        </form>
+
+        {% if result %}
+        <div class="resultado">
+            <h3>Resultado:</h3>
+            <p>{{ result|safe }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
