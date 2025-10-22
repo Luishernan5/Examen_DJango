@@ -81,10 +81,8 @@ USE_TZ = True
 
 # --- ARCHIVOS ESTÁTICOS ---
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_DIRS = [
-    os.path.join(BASE_DIR, 'examapp', 'static'),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'examapp', 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # carpeta donde Django recopilará todo
 
 # --- CLAVE POR DEFECTO PARA MODELOS ---
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
